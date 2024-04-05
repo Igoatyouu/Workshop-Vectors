@@ -116,7 +116,7 @@ Try to execute this code, and check your output:
 int main(int ac, char const *const * av)
 {
     vector_t *my_vector = vector_create(15, sizeof(char));
-    char temp_char = '\n';
+    char temp_char = ' ';
 
     for (int i = 0; av[1][i] != '\0'; i++)
         vector_pushback(my_vector, &av[1][i]);
@@ -137,6 +137,5 @@ int main(int ac, char const *const * av)
 ❯ ./vector "Hello" "World!" | cat -e 
 result:$
 $
-Hello$
-World!$
+Hello World!$
 ```
