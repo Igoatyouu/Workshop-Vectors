@@ -96,7 +96,7 @@ Keep in mind : The goal is to create generic data encapsulation. Think about it.
 
 Here is the new prototypes of the three functions:
 ```c
-? vector_pushback(vector_t *vector, const void *new_elem);
+? vector_pushback(vector_t *vector, void const *new_elem);
 ? vector_popback(vector_t *vector);
 void *vector_get_at(vector_t const *vector, size_t index);
 ```
