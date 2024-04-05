@@ -37,7 +37,7 @@ Create three functions:
 - Get the x element
 ```c
 ? vector_int_pushback(vector_int_t *vector, int new_elem);
-? vector_int_removeback(vector_int_t *vector);
+? vector_int_popback(vector_int_t *vector);
 int *vector_int_get_at(vector_int_t *vector, size_t index);
 ```
 
@@ -53,7 +53,7 @@ int main(void)
     vector_int_pushback(my_vector, 4);
     vector_int_pushback(my_vector, 2);
     vector_int_pushback(my_vector, -42);
-    vector_int_removeback(my_vector);
+    vector_int_popback(my_vector);
     vector_int_pushback(my_vector, 84);
     for (size_t i = 0; i < my_vector->nb_elems; i++)
         printf("- [%ld] = %d\n", i, *vector_int_get_at(my_vector, i));
@@ -97,7 +97,7 @@ Keep in mind : The goal is to create generic data encapsulation. Think about it.
 Here is the new prototypes of the three functions:
 ```c
 ? vector_pushback(vector_t *vector, const void *new_elem);
-? vector_removeback(vector_t *vector);
+? vector_popback(vector_t *vector);
 void *vector_get_at(vector_t const *vector, size_t index);
 ```
 <details>
@@ -129,13 +129,14 @@ int main(int ac, char const *const * av)
     temp_char = '\0';
     vector_pushback(my_vector, &temp_char);
 
-    printf("result:\n%s\n", my_vector->data);
+    printf("result:\n\n%s\n", my_vector->data);
     vector_destroy(my_vector);
 }
 ```
 ```
 ❯ ./vector "Hello" "World!" | cat -e 
 result:$
+$
 Hello$
 World!$
 ```
