@@ -120,11 +120,15 @@ int main(int ac, char const *const * av)
 
     for (int i = 0; av[1][i] != '\0'; i++)
         vector_pushback(my_vector, &av[1][i]);
+
     vector_pushback(my_vector, &temp_char);
+
     for (int i = 0; av[2][i] != '\0'; i++)
         vector_pushback(my_vector, &av[2][i]);
+
     temp_char = '\0';
     vector_pushback(my_vector, &temp_char);
+
     printf("result:\n%s\n", my_vector->data);
     vector_destroy(my_vector);
 }
