@@ -86,7 +86,7 @@ void vector_destroy(vector_t *vector);
 <details>
   <summary> HINT </summary>
 
-  > How can we store any type of data in our `array`? Hmm... Check the `parameters`
+  > How can we store any type of data in our array? Hmm... Check the parameters
 </details>
 
 ## Exercice 2 - Generic Data Management
