@@ -168,10 +168,11 @@ int main(void)
     }
 
     for (size_t i = 0; i < my_vector->nb_elems; i++)
-        printf("- [%ld] = %d\n", i, *((int*)vector_get_at(my_vector, i)));
+        printf("- [%ld] = %d\n", i, (?)vector_get_at(my_vector, i)));
     vector_destroy(my_vector);
 }
 ```
+*Replace the `(?)` with the correct casting*
 ```
 ❯ ./vector_int
 - [0] = 10
@@ -186,7 +187,7 @@ int main(void)
 - [9] = 55
 ```
 
-## END
+## Part 4 - End
 You have now seen the basics of vectors in C.
 
 A whole world is now open to you, don't stop there, and continue to improve your vectors!
