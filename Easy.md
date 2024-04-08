@@ -187,7 +187,7 @@ int main(void)
 - [9] = 55
 ```
 
-## Part 4 - End
+## Part 4 - Go further
 You have now seen the basics of vectors in C.
 
 A whole world is now open to you, don't stop there, and continue to improve your vectors!
