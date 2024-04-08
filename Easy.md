@@ -38,7 +38,7 @@ Create three functions:
 ```c
 ? vector_int_pushback(vector_int_t *vector, int new_elem);
 ? vector_int_popback(vector_int_t *vector);
-int *vector_int_get_at(vector_int_t *vector, size_t index);
+int vector_int_get_at(vector_int_t *vector, size_t index);
 ```
 
 ## Exercice 3 - Try your vector
@@ -56,7 +56,7 @@ int main(void)
     vector_int_popback(my_vector);
     vector_int_pushback(my_vector, 84);
     for (size_t i = 0; i < my_vector->nb_elems; i++)
-        printf("- [%ld] = %d\n", i, *vector_int_get_at(my_vector, i));
+        printf("- [%ld] = %d\n", i, vector_int_get_at(my_vector, i));
     vector_int_destroy(my_vector);
 }
 ```
@@ -96,7 +96,7 @@ Keep in mind : The goal is to create generic data encapsulation. Think about it.
 
 Here is the new prototypes of the three functions:
 ```c
-? vector_pushback(vector_t *vector, void const *new_elem);
+? vector_pushback(vector_t *vector, ? new_elem);
 ? vector_popback(vector_t *vector);
 void *vector_get_at(vector_t const *vector, size_t index);
 ```
@@ -113,7 +113,7 @@ Are you confident? Let's check that!
 
 Try to execute this code, and check your output:
 ```c
-int main(int ac, char const *const * av)
+int main(int ac, char const *const *av)
 {
     vector_t *my_vector = vector_create(15, sizeof(char));
     char temp_char = ' ';
