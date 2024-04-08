@@ -139,3 +139,54 @@ result:$
 $
 Hello World!$
 ```
+
+# Part 3 - Almost finished! (Dynamically Allocated)
+Congratulations, you've successfully created generic vectors applicable in all situations! But, hold on... It seems we're missing something.
+
+What happens if you try to push back more elements than the capacity allows? Let's address this.
+
+## Exercise 1 - Dynamic Allocation
+Enhance the `vector_pushback` function to dynamically resize the vector's maximum capacity if it's exceeded.
+
+Here's the updated function prototype:
+```c
+? vector_pushback(vector_t **vector, ? new_elem);
+```
+
+## Exercice 2 - Try your dynamic vectors
+Again, let's check your new vectors!
+
+```c
+int main(void)
+{
+    vector_t *my_vector = vector_create(5, sizeof(int));
+    int temp_int = 10;
+
+    for (int i = 0; i < 10; i++) {
+        temp_int += i;
+        vector_pushback(&my_vector, &temp_int);
+    }
+
+    for (size_t i = 0; i < my_vector->nb_elems; i++)
+        printf("- [%ld] = %d\n", i, *((int*)vector_get_at(my_vector, i)));
+    vector_destroy(my_vector);
+}
+```
+```
+❯ ./vector_int
+- [0] = 10
+- [1] = 11
+- [2] = 13
+- [3] = 16
+- [4] = 20
+- [5] = 25
+- [6] = 31
+- [7] = 38
+- [8] = 46
+- [9] = 55
+```
+
+## END
+You have now seen the basics of vectors in C.
+
+A whole world is now open to you, don't stop there, and continue to improve your vectors!
