@@ -190,8 +190,8 @@ int main(void)
 ## Part 4 - Go further
 You have now seen the basics of vectors in C.
 
-Let's try something fun! You currently need to keep your structure everywhere, it's boring...
-Try to adapt your generic vectors until they works with this main : 
+Let’s try something fun! You currently need to keep your structure everywhere, it's annoying...
+Try adapting your generic vectors until they work with this main:
 ```c
 #include <unistd.h>
 
