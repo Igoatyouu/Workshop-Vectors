@@ -190,4 +190,30 @@ int main(void)
 ## Part 4 - Go further
 You have now seen the basics of vectors in C.
 
-A whole world is now open to you, don't stop there, and continue to improve your vectors!
+Let's try something fun! You currently need to keep your structure everywhere, it's boring...
+Try to adapt your generic vectors until they works with this main : 
+```c
+#include <unistd.h>
+
+void part4(void)
+{
+    char *vector = vector_create(1, sizeof(char));
+
+    vector_npushback(&vector, "Yhfwruv#duh#wkh#ehvw#gdwd#vwrudjh#lq#F$#=G", 42);
+    const size_t length = vector_getlength(vector);
+    for (size_t i = 0; i < length; i++)
+        vector[i] -= 3;
+    write(STDOUT_FILENO, vector, length);
+    write(STDOUT_FILENO, "\n", 1);
+    vector_destroy(vector);
+}
+
+int main(const int ac, char *const *av)
+{
+    part4();
+}
+```
+```
+❯ ./final_vectors 
+Vectors are the best data storage in C! :D
+```
